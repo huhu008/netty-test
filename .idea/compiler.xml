@@ -6,12 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="jetty" />
         <module name="netty-test" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="jetty" target="1.5" />
       <module name="netty-test" target="1.5" />
     </bytecodeTargetLevel>
   </component>

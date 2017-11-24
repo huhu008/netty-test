@@ -11,7 +11,7 @@ public class EchoServerHandler extends ChannelInboundHandlerAdapter{
     @Override
     public void channelRead(ChannelHandlerContext ctx , Object msg){
         ByteBuf buf=(ByteBuf) msg;
-        System.out.println("sever received"+ buf.toString(CharsetUtil.UTF_8));
+        System.out.println("sever received:"+ buf.toString(CharsetUtil.UTF_8));
         ctx.write(buf);
     }
     @Override

@@ -9,6 +9,10 @@ import io.netty.util.CharsetUtil;
 @ChannelHandler.Sharable
 public class EchoServerHandler extends ChannelInboundHandlerAdapter{
     @Override
+    public  void channelActive(ChannelHandlerContext ctx){
+        System.out.println("Server start !");
+    }
+    @Override
     public void channelRead(ChannelHandlerContext ctx , Object msg){
         ByteBuf buf=(ByteBuf) msg;
         System.out.println("sever received:"+ buf.toString(CharsetUtil.UTF_8));
@@ -16,6 +20,7 @@ public class EchoServerHandler extends ChannelInboundHandlerAdapter{
     }
     @Override
     public void channelReadComplete(ChannelHandlerContext ctx){
+        System.out.println("serve complete !");
         ctx.writeAndFlush(Unpooled.EMPTY_BUFFER).addListener(ChannelFutureListener.CLOSE);
     }
     @Override
